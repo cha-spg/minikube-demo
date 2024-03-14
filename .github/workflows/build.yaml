@@ -4,7 +4,9 @@ on: [push]
 jobs:
   build_executable:
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions:
+      packages: write
+      contents: read
     steps:
       - name: Login to Github Container Registry
         uses: docker/login-action@v3
