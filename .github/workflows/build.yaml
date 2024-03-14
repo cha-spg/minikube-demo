@@ -17,9 +17,7 @@ jobs:
         run: |
           mvn -DskipTests -B package
           ls -lh target
-#      - name: List files in the repository
-#        run: |
-#          ls ${{ github.workspace }}
-#          pwd
-#      - run: echo "🍏 This job's status is ${{ job.status }}."
-
+          cp src/main/docker/Dockerfile ./target
+          docker build --tag ghcr.io/cha-spg/backend:latest ./target
+          docker push ghcr.io/cha-spg/backend:latest
+          
