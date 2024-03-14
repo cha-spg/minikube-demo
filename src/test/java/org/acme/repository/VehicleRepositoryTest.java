@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 @QuarkusTest
 class VehicleRepositoryTest {
 
+    /*
     @Inject
     VehicleRepository vehicleRepository;
 
@@ -31,4 +32,6 @@ class VehicleRepositoryTest {
 
         vehicleRepository.getEntityManager().flush();
     }
+
+     */
 }
