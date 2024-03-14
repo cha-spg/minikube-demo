@@ -19,5 +19,4 @@ jobs:
           ls -lh target
           cp src/main/docker/Dockerfile ./target
           docker build --tag ghcr.io/cha-spg/backend:latest ./target
-          docker push ghcr.io/cha-spg/backend:latest
           
