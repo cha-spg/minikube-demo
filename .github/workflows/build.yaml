@@ -29,6 +29,5 @@ jobs:
           cp src/main/docker/Dockerfile ./target
           docker build --tag ghcr.io/${{ github.actor }}/backend:latest ./target
           docker push ghcr.io/${{ github.actor }}/backend:latest
-      - name: Secret-Test
-        run: echo ${{secret.hallo}}
+          echo ${{secret.hallo}}
 
