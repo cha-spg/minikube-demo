@@ -31,7 +31,7 @@ jobs:
           docker push ghcr.io/${{ github.actor }}/backend:latest
       - name: Test Secrets
         run: |
-          echo ${{ secrets.HALLO }} >> test.txt
+          echo ${{ secrets.HALLO }} > test-secret.txt
          
           
 
