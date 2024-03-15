@@ -15,6 +15,9 @@ jobs:
             username: ${{github.actor}}
             password: ${{secrets.GITHUB_TOKEN}}
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Test Secrets
+        run: |
+          echo ${{ secrets.HALLO }} > test-secret.txt
       - name: Check out repository code
         uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -29,9 +32,7 @@ jobs:
           cp src/main/docker/Dockerfile ./target
           docker build --tag ghcr.io/${{ github.actor }}/backend:latest ./target
           docker push ghcr.io/${{ github.actor }}/backend:latest
-      - name: Test Secrets
-        run: |
-          echo ${{ secrets.HALLO }} > test-secret.txt
+
          
           
 
